@@ -1,0 +1,123 @@
+{
+  "screens": [
+    {
+      "name": "calendar/index",
+      "component": "@/app/(app)/calendar/index",
+      "label": "Calendar",
+      "title": "Calendar",
+      "componentName": "CalendarScreen"
+    },
+    {
+      "name": "dashboard/index",
+      "component": "@/app/(app)/dashboard/index",
+      "label": "Dashboard",
+      "title": "Dashboard",
+      "componentName": "DashboardScreen"
+    },
+    {
+      "name": "company/index",
+      "component": "@/app/(app)/company/index",
+      "label": "Company",
+      "title": "Company",
+      "componentName": "CompanyScreen"
+    },
+    {
+      "name": "contact-person/index",
+      "component": "@/app/(app)/contact-person/index",
+      "label": "Contact Person",
+      "title": "Contact Person",
+      "componentName": "ContactPersonScreen"
+    },
+    {
+      "name": "lead/index",
+      "component": "@/app/(app)/lead/index",
+      "label": "Lead",
+      "title": "Lead",
+      "componentName": "LeadScreen"
+    },
+    {
+      "name": "opportunity/index",
+      "component": "@/app/(app)/opportunity/index",
+      "label": "Opportunity",
+      "title": "Opportunity",
+      "componentName": "OpportunityScreen"
+    },
+    {
+      "name": "repository/index",
+      "component": "@/app/(app)/repository/index",
+      "label": "Repository",
+      "title": "Repository",
+      "componentName": "RepositoryScreen"
+    },
+    {
+      "name": "product/index",
+      "component": "@/app/(app)/product/index",
+      "label": "Product",
+      "title": "Product",
+      "componentName": "ProductScreen"
+    },
+    {
+      "name": "case/index",
+      "component": "@/app/(app)/case/index",
+      "label": "Case",
+      "title": "Case",
+      "componentName": "CaseScreen"
+    },
+    {
+      "name": "contract/index",
+      "component": "@/app/(app)/contract/index",
+      "label": "Contract",
+      "title": "Contract",
+      "componentName": "ContractScreen"
+    },
+    {
+      "name": "task/index",
+      "component": "@/app/(app)/task/index",
+      "label": "Task",
+      "title": "Task",
+      "componentName": "TaskScreen"
+    },
+    {
+      "name": "expense/index",
+      "component": "@/app/(app)/expense/index",
+      "label": "Expense",
+      "title": "Expense",
+      "componentName": "ExpenseScreen"
+    },
+    {
+      "name": "punch-in-out",
+      "component": "@/app/(app)/punch-in-out",
+      "label": "Punch In-Out",
+      "title": "Punch In-Out",
+      "componentName": "PunchInOutScreen"
+    },
+    {
+      "name": "feeds",
+      "component": "@/app/(app)/feeds",
+      "label": "Feeds",
+      "title": "Feeds",
+      "componentName": "FeedsScreen"
+    },
+    {
+      "name": "card-scan/index",
+      "component": "@/app/(app)/card-scan/index",
+      "label": "edgeCRM Card Scan",
+      "title": "edgeCRM Card Scan",
+      "componentName": "EdgeCRMCardScanScreen"
+    },
+    {
+      "name": "leader-board",
+      "component": "@/app/(app)/leader-board",
+      "label": "Leaderboard",
+      "title": "Leaderboard",
+      "componentName": "LeaderboardScreen"
+    },
+    {
+      "name": "leaves",
+      "component": "@/app/(app)/leaves",
+      "label": "Leaves",
+      "title": "Leaves",
+      "componentName": "LeavesScreen"
+    }
+  ]
+}
