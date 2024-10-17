@@ -135,7 +135,6 @@ import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
 import DrawerWithProfile from "./DrawerWithProfile"; // Import the CustomDrawer component
 import CalendarScreen from "@/app/(app)/calendar/index";
 import DashboardScreen from "@/app/(app)/dashboard";
-import CompanyScreen from "@/app/(app)/company/index";
 import ContactPersonScreen from "@/app/(app)/contact-person/index";
 import LeadScreen from "@/app/(app)/lead/index";
 import OpportunityScreen from "@/app/(app)/opportunity/index";
@@ -152,11 +151,12 @@ import LeaderboardScreen from "@/app/(app)/leader-board";
 import LeavesScreen from "@/app/(app)/leaves";
 import drawerConfig from "@/config/drawerConfig.json";
 import { useTheme } from "@react-navigation/native";
+import CompanyNavigator from "@/app/(app)/company/CompanyNavigator";
 
 const componentMap = {
   CalendarScreen,
   DashboardScreen,
-  CompanyScreen,
+  CompanyNavigator,
   ContactPersonScreen,
   LeadScreen,
   OpportunityScreen,
@@ -190,6 +190,7 @@ export default function App() {
     <Drawer.Navigator
       drawerContent={(props) => <DrawerWithProfile {...props} />}
       screenOptions={{
+        headerShown: false,
         drawerStyle: {
           backgroundColor: colors.background, // Matching the green background
         },

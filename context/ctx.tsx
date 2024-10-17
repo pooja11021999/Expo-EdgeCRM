@@ -16,6 +16,7 @@ const AuthContext = createContext<{
   session?: string | null;
   loginData?: any;
   isLoading: boolean;
+  errorMsg?: string;
 }>({
   signIn: async () => {},
   signOut: () => null,
@@ -40,26 +41,28 @@ export function SessionProvider({ children }: PropsWithChildren) {
   const [session, setSession] = useStorageState<string | null>("session", null);
   const [isLoading, setIsLoading] = useState(false);
   const [loginData, setLoginData] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
 
   const login = async (email: string, password: string) => {
     setIsLoading(true);
     try {
-      const result = await axios({
-        method: "POST",
-        url: `${API_URL}/login`,
-        params: {
-          email,
-          password,
-          mobile: 1,
-        },
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
+      // const result = await axios({
+      //   method: "POST",
+      //   url: `${API_URL}/login`,
+      //   params: {
+      //     email,
+      //     password,
+      //     mobile: 1,
+      //   },
+      //   headers: {
+      //     "Content-Type": "application/x-www-form-urlencoded",
+      //   },
+      // });
 
-      const token = result.data.meta.api_token;
+      const token =
+        "7yrBXKjFvH5JoHv9Yu5ruWoSabiy4TWdIzI4TT0Oa3laaIOpKoO4fb5N6TMygwXN";
 
-      setLoginData(result.data);
+      // setLoginData(result?.data);
       setSession(token);
       setIsLoading(false);
 
@@ -68,11 +71,12 @@ export function SessionProvider({ children }: PropsWithChildren) {
       router.replace("/");
 
       return { token };
-    } catch (e) {
-      console.log("error+++", e);
+    } catch (e: any) {
+      let errorMessage =
+        e?.response?.data?.error?.message || "Some problem logging in!";
+      setErrorMsg(errorMessage);
       setIsLoading(false);
-      Alert.alert((e as any).response.data.error);
-      return { error: true, msg: (e as any).response.data.error };
+      return errorMessage;
     }
   };
 
@@ -90,6 +94,7 @@ export function SessionProvider({ children }: PropsWithChildren) {
         session,
         loginData,
         isLoading,
+        errorMsg,
       }}
     >
       {children}

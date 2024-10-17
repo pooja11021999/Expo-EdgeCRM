@@ -40,9 +40,17 @@ export const LoginForm: React.FC<AuthScreenProps> = ({
   setLoginCredentials,
   loginCredentials,
 }) => {
-  const { isLoading, signIn, session, loginData } = useSession();
+  const { isLoading, signIn, session, loginData, errorMsg } = useSession();
   console.log("session-", session, loginData?.data?.role);
   const [isPasswordVisible, setPasswordVisible] = useState(false);
+
+  React.useEffect(() => {
+    if (!session && errorMsg) {
+      showToast(errorMsg, "fail");
+    } else if (session) {
+      showToast("Logged In Successfully!", "success");
+    }
+  }, [session, errorMsg]);
 
   React.useEffect(() => {
     setLoading(isLoading);
@@ -59,6 +67,12 @@ export const LoginForm: React.FC<AuthScreenProps> = ({
     setLoginCredentials({ ...data });
     setLoading(isLoading);
     signIn(data.email, data.password);
+
+    if (!session && errorMsg) {
+      showToast(errorMsg, "fail");
+    } else if (session) {
+      showToast("Logged In Successfully!", "success");
+    }
 
     //for verifying user
     // const superAdmin = loginData?.data?.role?.filter((item: any) => {

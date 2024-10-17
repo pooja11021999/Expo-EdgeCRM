@@ -15,11 +15,11 @@
       "componentName": "DashboardScreen"
     },
     {
-      "name": "company/index",
-      "component": "@/app/(app)/company/index",
+      "name": "company/CompanyNavigator",
+      "component": "@/app/(app)/company/CompanyNavigator",
       "label": "Company",
       "title": "Company",
-      "componentName": "CompanyScreen"
+      "componentName": "CompanyNavigator"
     },
     {
       "name": "contact-person/index",

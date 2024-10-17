@@ -1,9 +1,12 @@
-import { Text, View } from "react-native";
+// import CompanyList from "./CompanyList";
+// import CompanyCard from "./CompanyCard";
 
-export default function Index() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ padding: 40, color: "white" }}>Heading!</Text>
-    </View>
-  );
-}
+// export { CompanyList, CompanyCard };
+import React from "react";
+import { View } from "react-native";
+
+const CompanyScreen = () => {
+  return <View></View>;
+};
+
+export default CompanyScreen;

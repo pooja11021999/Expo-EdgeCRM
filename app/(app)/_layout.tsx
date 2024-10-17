@@ -1,16 +1,22 @@
-import { Text } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Drawer } from "expo-router/drawer";
-import { Redirect, Stack } from "expo-router";
+import CustomDrawer from "@/components/CustomDrawer";
+import { ColorPalette } from "@/constants/Colors";
 import {
-  useFonts,
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold,
   Roboto_900Black,
+  useFonts,
 } from "@expo-google-fonts/roboto";
+import { Redirect } from "expo-router";
+import {
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+} from "react-native";
+
 import { useSession } from "../../context/ctx";
-import CustomDrawer from "@/components/CustomDrawer";
 
 export default function AppLayout() {
   const [fontsLoaded, fontsError] = useFonts({
@@ -39,5 +45,20 @@ export default function AppLayout() {
     return <Redirect href="/sign-in" />;
   }
 
-  return <CustomDrawer />;
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={ColorPalette.navyBlue}
+      />
+      <CustomDrawer />
+    </SafeAreaView>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+});
